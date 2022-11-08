@@ -2,7 +2,7 @@ name: Workflow - Feature
 on:
   push:
     branches:
-      - 'feature/*'
+      - 'feature/**'
 jobs:
   check-php-version:
     runs-on: ubuntu-latest
