@@ -200,7 +200,7 @@ class CartTest extends TestCase
 
         $this->checkoutSessionMock->expects($this->once())
             ->method('getQuote')
-            ->willReturn($this->quoteMock);
+            ->willReturn('quote');
         $this->eventManagerMock->expects($this->at(0))->method('dispatch')->with(
             'checkout_cart_update_items_before',
             ['cart' => $this->cart, 'info' => $infoDataObject]
