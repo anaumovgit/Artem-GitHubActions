@@ -33,5 +33,5 @@ jobs:
       - name: Check magento version
         run: php bin/magento --version
       - name: Run tests in magento checkout module
-        run: php ./vendor/bin/phpunit -c ./dev/tests/unit/phpunit.xml.dist ./vendor/magento/module-checkout/Test/Unit
+        run: php ./vendor/bin/phpunit -c ./dev/tests/unit/phpunit.xml.dist ./app/code/Artem
 
