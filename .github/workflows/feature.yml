@@ -14,7 +14,21 @@ jobs:
         with:
           php-version: '7.4'
           extensions: mbstring
+        env:
+          COMPOSER_AUTH_JSON: |
+            {
+              "http-basic": {
+                "repo.magento.com": {
+                  "username": "${{ secrets.MAGENTO_USERNAME }}",
+                  "password": "${{ secrets.MAGENTO_PASSWORD }}"
+                }
+              }
+            }
       - name: Check php version
         run: php -v
       - name: Check composer version
         run: composer --version
+      - name: Install magento
+        run: composer install
+      - name: Check magento version
+        run: php bin/magento --version
