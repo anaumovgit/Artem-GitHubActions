@@ -16,3 +16,5 @@ jobs:
           extensions: mbstring
       - name: Check php version
         run: php -v
+      - name: Check composer version
+        run: composer --version
